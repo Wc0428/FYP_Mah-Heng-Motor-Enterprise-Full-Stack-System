@@ -4,7 +4,7 @@ $username = "root";
 $password = "";
 $database = "mah heng motor database";
 
-// Create a database connection
+// Create a database connection 
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
@@ -34,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Output data as a table
                 echo '<div class="big-box">';
                 echo '<div class="company-info">'; // Company info div
-                echo '<p><h1>Sales Report</h1></p>';
-                echo '<p><h3>Mah Heng Motor Enterprise</h3></p>';
+                echo '<h1>Sales Report</h1>';
+                echo '<h3>Mah Heng Motor Enterprise</h3>';
                 echo '<p>63, Jalan Sri Skudai, Taman Sri Skudai, 81300 Skudai, Johor.</p>';
                 echo '<p>+60162866926</p>';
                 echo '</div>'; // End company info div
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $componentTotalPrice = $row['Price'];
                     $overallTotalPrice += $componentTotalPrice;
                     $formattedPrice = number_format($componentTotalPrice, 2);
-                    echo "<tr><td>{$row['Component_Name']}</td><td>{$row['Total_Quantity']}</td><td>{$row['Price']}</td></tr>";
+                    echo "<tr><td>{$row['Component_Name']}</td><td>{$row['Total_Quantity']}</td><td>{$formattedPrice}</td></tr>";
                     // Collect data for chart
                     $componentData[] = $row;
                 }
@@ -59,17 +59,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '</table>';
                 echo '</div>';
                 // Output chart data as JSON
+                echo '<h1 style="text-align: center;">Component Sales Chart</h1>';
+                echo '<canvas id="componentChart"></canvas>';
                 echo '<script>';
                 echo 'var componentData = ' . json_encode($componentData) . ';';
                 echo '</script>';
             } else {
-                echo "<p>There are no sales on these dates.....</p>";
+                echo "<p>There are no sales on these dates.</p>";
             }
         } else {
             echo "Error executing the query: " . $conn->error;
         }
     } else {
-        echo "<p>Please select valid date!</p>";
+        echo "<p>Please select valid dates!</p>";
     }
 }
 
@@ -111,11 +113,9 @@ $conn->close();
     #componentChart {
         max-width: 800px; /* Adjust the width as needed */
         max-height: 800px; /* Adjust the height as needed */
-        margin: 100 ;
-        margin-left:300px;
+        margin: 20px auto;
     }
 </style>
-<canvas id="componentChart"></canvas>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -165,7 +165,7 @@ $conn->close();
                                     if (context.parsed !== null) {
                                         label += context.parsed;
                                     }
-                                    return label;
+                                    return label + ' units';
                                 }
                             }
                         }

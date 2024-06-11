@@ -10,6 +10,41 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="icon" href="../image/logo.png" type="image/png">
+    <style>
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.search-container label {
+    margin-left: 20px; /* Adjust as needed for spacing */
+}
+
+.search-container input[type="text"],
+.search-container input[type="date"] {
+    width: 30%; /* Adjust as needed */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.search-container input[type="text"]:focus,
+.search-container input[type="date"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Additional styling to ensure both inputs align well */
+.search-container input[type="text"]::placeholder,
+.search-container input[type="date"]::placeholder {
+    color: #999;
+}
+
+    </style>  
 </head>
 <body>
 <div class="container">
@@ -90,6 +125,13 @@
         </aside>
         <main>
     <h1>Sales Management</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for names...&#128270;">
+        <label for="startDateInput">Start Date:</label>
+        <input type="date" id="startDateInput" onchange="searchTable()">
+        <label for="endDateInput">End Date:</label>
+        <input type="date" id="endDateInput" onchange="searchTable()">  
+    </div>
     <table id="serviceTable">
         <thead>
             <tr>
@@ -962,6 +1004,49 @@ function populateForm(data) {
 //     });
 // }
 
+function searchTable() {
+            var input, filter, table, tr, td, i, txtValue, startDateInput, endDateInput, startDate, endDate, dateFilter;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("serviceTable");
+            tr = table.getElementsByTagName("tr");
+            startDateInput = document.getElementById("startDateInput").value;
+            endDateInput = document.getElementById("endDateInput").value;
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[3]; // Change index based on the column where customer name is located
+                dateFilter = tr[i].getElementsByTagName("td")[1]; // Change index based on the column where service date is located
+                if (td && dateFilter) {
+                    txtValue = td.textContent || td.innerText;
+                    startDate = new Date(startDateInput);
+                    endDate = new Date(endDateInput);
+                    serviceDate = new Date(dateFilter.textContent || dateFilter.innerText);
+                    if ((txtValue.toUpperCase().indexOf(filter) > -1) &&
+                        (!startDateInput || serviceDate >= startDate) &&
+                        (!endDateInput || serviceDate <= endDate)) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        function toggleSort() {
+            var dateHeader = document.getElementById("dateHeader");
+            var startDateInput = document.getElementById("startDateInput");
+            var endDateInput = document.getElementById("endDateInput");
+
+            if (dateHeader.classList.contains("ascending")) {
+                dateHeader.classList.remove("ascending");
+                dateHeader.classList.add("descending");
+            } else {
+                dateHeader.classList.remove("descending");
+                dateHeader.classList.add("ascending");
+            }
+
+            searchTable();
+        }
     </script>
 </body>
 </html>

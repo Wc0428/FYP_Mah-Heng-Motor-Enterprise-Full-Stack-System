@@ -3,7 +3,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "mah heng motor database";
-
+ 
 // Create a database connection
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -60,8 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '</table>';
             echo '</div>';
             // Output chart data as JSON
+            echo '<p><h1 style="text-align: center;">Component Invoices Chart</h1></p>';
             echo '<script>';
             echo 'var componentData = ' . json_encode($componentData) . ';';
+
             echo '</script>';
           } else {
             echo "<p>There are no invoices on these dates.....</p>";
@@ -112,8 +114,7 @@ $conn->close();
     #componentChart {
         max-width: 800px; /* Adjust the width as needed */
         max-height: 800px; /* Adjust the height as needed */
-        margin: 100 ;
-        margin-left:300px;
+        margin: 20px auto;
     }
 </style>
 <canvas id="componentChart"></canvas>
