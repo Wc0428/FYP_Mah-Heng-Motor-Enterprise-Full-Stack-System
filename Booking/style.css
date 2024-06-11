@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body{
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+#container{
+    transition: 1s all ease-in-out;
+}
+
+#container.menuopen{
+    filter: blur(8px);
+    transform: scale(1.2);
+}
+
+section{
+    display: flex;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    padding: 50px;
+}
+
+
+
+section h1{
+    font-size: 120px;
+    z-index: 2;
+}
+
+header{
+    z-index: 9999;
+    position: relative;
+}
+
+header #logo{
+    position: fixed;
+    top: 30px;
+    left: 0;
+    right: 0;
+    width: 70px;
+    height: auto;
+    margin: 0 auto;
+    opacity: 1;
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s;
+}
+
+header nav{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 420px;
+    z-index: 100;
+    top: 130px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 1s all cubic-bezier(0.080, 0.9, 0.18, 1) 0.2s;
+}
+
+header nav a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 16px;
+    font-size: 18px;
+    letter-spacing: 1.8px;
+    transition: 0.3s all cubic-bezier(0.080, 0.9, 0.18, 1) 0.6s, 0.3s color ease;
+}
+
+header nav a:hover{
+    color: #000;
+}
+
+header nav button{
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 60px;
+    height: 60px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 100%;
+    cursor: pointer;
+    transform: scale(0);
+    transition: 0.3s all cubic-bezier(0.080, 0.9, 0.18, 1) 0.2s;
+}
+
+header nav button span{
+    width: 50%;
+    background-color: #fff;
+    height: 3px;
+    display: block;
+    margin: 4px auto;
+    transform: scale(0);
+    transition: 0.6s transform cubic-bezier(0.080, 0.9, 0.18, 1) 0s, 0.3s margin ease-in 0s;
+}
+
+header nav button:hover span{
+    margin: 9px auto;
+}
+
+header.sticky #logo{
+    opacity: 0;
+}
+
+header.sticky nav{
+    top: 20px;
+    padding: 0;
+    width: 80px;
+    height: 80px;
+}
+
+header.sticky nav button{
+    transform: scale(1);
+    transition-delay: 0.3s;
+}
+
+header.sticky nav button span{
+    transform: scaleX(1);
+    transition: 0.6s transform cubic-bezier(0.080, 0.9, 0.18, 1) 0.8s, 0.3s margin ease-in 0s;
+}
+
+header.sticky nav a{
+    opacity: 0;
+    transform: scale(0.3);
+    transition-delay: 0.1s;
+}
+
+@media screen and (max-width: 520px) {
+    
+    header nav{
+        height: 60px;
+        width: 390px;
+    }
+
+    header nav button{
+        width: 50px;
+        height: 50px;
+    }
+
+    header nav a{
+        font-size: 16px;
+    }
+
+    section h1{
+        font-size: 80px;
+    }
+
+    header.sticky nav{
+        width: 120px;
+        height: 120px;
+    }
+
+}
+
+.text1 {
+    text-align: center;
+    margin-top: 80px; /* Adjust top margin as needed */
+}
+
+.text1 h1 {
+    font-size: 6em;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    background: url('back-text.png');
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: backText 20s linear infinite alternate;
+    text-align: left;
+    margin: 0; /* Remove default margins */
+    padding: 10px 50; /* Adjust vertical and horizontal padding */
+}
+@keyframes backText {
+    100% {
+        background-position: 2000px 0;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+    
+.services-header {
+    font-weight: bold;
+    font-size: 35px;
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Poetsen One', sans-serif;
+}
+
+.shop-name {
+    font-weight: bold;
+    font-size: 50px;
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Poetsen One', sans-serif;
+}
+
+.wrapper .first-text {
+    font-size: 30px;
+    color: #fff;
+    font-family: 'Poetsen One', sans-serif;
+}
+
+.wrapper .sec-texts {
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.sec-texts li {
+    position: relative;
+    top: 0;
+    font-size: 60px;
+    color: #0ef;
+    list-style: none;
+    padding: 0 20px;
+    text-shadow: 0 0 10px #0ef;
+    animation: slide 12s steps(4) infinite, colorful 6s infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+@keyframes colorful {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.sec-texts li span {
+    position: relative;
+}
+
+.sec-texts li span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 800px;
+    height: 90px;
+    background: #000;
+    border-left: 2px solid #0ef;
+    animation: typing 1.5s steps(10) infinite alternate;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 55px;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+.container-form{
+    display: flex;
+    gap: 20px;
+    background-color: transparent;
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-left: 850px;
+}
+
+
+.container-form form{
+    width: 100%;
+}
+
+form h2{
+    text-align: center;
+    margin-bottom:20px;
+    color: white;
+    font-size: 40px;
+    font-family: 'Poetsen One', sans-serif;
+}
+
+.form-control{
+    position: relative;
+    margin-bottom:5px;
+    color: #000;
+    
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Poetsen One', sans-serif;
+    font-size: 20px; /* Increased font size for emphasis */
+    color: white; /* Darker color for better visibility */
+    font-weight: bold; /* Bold font weight for emphasis */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+}
+
+.form-control input,
+.form-control textarea{
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+}
+
+
+button{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    background-color: #77b7cd;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background-color: #295580;
+}
+
+.form-control .icon{
+    position: absolute;
+    right: 10px;
+    top: 72%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: transparent;
+    pointer-events: none;
+}
+
+
+
+.form-control.success input,
+.form-control.success textarea{
+    border-color: #2ecc71;
+}
+
+.form-control.success .icon{
+    color: #2ecc71;
+}
+
+.form-control.error input,
+.form-control.error textarea{
+    border-color: #e74c3c;
+}
+
+.form-control.error .icon,
+.form-control.error input::placeholder,
+.form-control.error textarea::placeholder{
+    color: #e74c3c;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content{
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    border: 1px solid #888;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close-button{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 920px) {
+    
+    .container img{
+        display: none;
+    }
+
+    .container form{
+        width: 100%;
+    }
+
+}
+
+#about {
+    padding: 50px;
+    color: #fff;
+    
+    
+}
+
+#about h1 {
+    font-family: 'Poetsen One', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+
+}
+
+.about-content {
+    margin-top: 10px;
+    line-height: 60px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    align-items: center;
+    margin-left: 800px;
+    justify-content: flex-end; /* Align items to the right */
+    gap: 20px; /* Space between items */
+}
+
+.about-content p {
+    font-family: 'Poetsen One', sans-serif;
+    font-size: 20px;
+    margin: 10 10px;
+    white-space: nowrap; /* Prevent line breaks */
+
+    
+}
+
+.about-content iframe {
+    margin-left: 20px;
+    border: none;
+}
+

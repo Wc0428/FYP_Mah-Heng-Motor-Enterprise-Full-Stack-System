@@ -1,0 +1,46 @@
+<!DOCTYPE html>     
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="login.css">
+  <title>MAH HENG MOTOR ENTERPRISE</title>
+</head>
+<body>
+    <section>
+        <img src="./image/logo.png">
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <input type="text" id="user" required>
+                        <label for="">User</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" id="password" required >
+                        <label for="">Password</label>
+                    </div>
+                    <input type="submit" value="Login" class="button" onclick="valid()">
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        function valid(){
+            event.preventDefault();
+            var user = document.getElementById("user").value;
+            var password = document.getElementById("password").value;
+            if(user=="admin" && password=="admin123"){
+                window.location.assign("../Database/php-pages/dashboard.php");
+            }
+            else{
+                alert("Wrong User or Password!!");
+                return;
+            }
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

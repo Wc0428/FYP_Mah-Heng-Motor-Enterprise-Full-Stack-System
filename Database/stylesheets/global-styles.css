@@ -1,0 +1,98 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    user-select: none;
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer/Edge */
+}
+.content {
+    margin-top: 150px; /* 与页眉之间的距离 */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px); /* 高度根据页眉计算，确保内容从页眉下方开始 */
+    position: sticky;
+    top: 1500px; /* 保持距离header的距离 */
+}
+h1 {
+    font-size: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* 清除默认的 body 外边距 */
+    height: 100vh; /* 使用视口高度作为页面高度 */
+    overflow-y: auto; /* 允许垂直滚动 */
+  }
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #8BC34A; /* 绿色头部 */
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* 让logo和按钮分别靠左和右对齐 */
+    align-items: center; /* 让logo和按钮垂直居中 */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header-logo img {
+    height: 80px;
+}
+
+.header-buttons {
+    display: flex;
+}
+
+/* 调整按钮字体大小 */
+.header-button {
+    line-height: 40px;
+    padding: 0 15px;
+    color: #fff;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 18px; /* 调整按钮字体大小 */
+}
+
+/* 悬停时的样式 */
+.header-button:hover {
+    background-color: #5E8B3E; /* 深绿色 */
+    cursor: pointer; /* 鼠标悬停时显示手型光标 */
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #8BC34A; /* 绿色底部 */
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* 让footer-logo居中 */
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 60px;
+}
+
+.contact-text {
+    padding: 75px;
+    box-sizing: border-box;
+}
