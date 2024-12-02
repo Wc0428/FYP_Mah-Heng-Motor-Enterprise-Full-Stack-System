@@ -9,10 +9,10 @@ The booking system serves as the **customer-facing interface**. Through this web
 
 This ensures customers won't face **unnecessary delays** or *wasted trips*.  
 
-**Home Page**
+___Home Page___
 ![firstpage](https://github.com/user-attachments/assets/12763401-bca5-480c-adfd-498936a99255)
 
-**Appointment Page**
+***Appointment Page***
 ![bookingpage](https://github.com/user-attachments/assets/7ccbb1d2-b72c-4ea7-bd44-b4971fefad18)
 
 
@@ -25,6 +25,6 @@ The database system is the **internal-facing tool** for the company. It enables 
 
 This system streamlines the company’s operations and enhances both *customer experience* and **internal efficiency**.
 
-**Dashboard Page**
+***Dashboard Page***
 ![dashboard](https://github.com/user-attachments/assets/614dbe85-517f-4f43-954b-0b393ced8bc9)
 
