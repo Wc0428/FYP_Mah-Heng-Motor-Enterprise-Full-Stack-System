@@ -1,4 +1,4 @@
-Full-Stack System for a Motor Repair Company
+**Full-Stack System for a Motor Repair Company**
 This project is designed to assist a motor repair company with no prior system in place by building a full-stack solution that includes two key components:
 
 1. Booking System (Frontend)
