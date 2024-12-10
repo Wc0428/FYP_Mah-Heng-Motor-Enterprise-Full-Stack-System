@@ -29,5 +29,7 @@ This system streamlines the company’s operations and enhances both *customer e
 ![dashboard](https://github.com/user-attachments/assets/614dbe85-517f-4f43-954b-0b393ced8bc9)
 
 ## **Demo Video for the System**  
+[![Watch the video](https://img.youtube.com/vi/B5qoIqxQi1g/maxresdefault.jpg)](https://youtu.be/B5qoIqxQi1g)
+
 
 
